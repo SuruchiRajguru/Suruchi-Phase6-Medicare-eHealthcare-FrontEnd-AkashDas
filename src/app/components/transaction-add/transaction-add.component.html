@@ -1,0 +1,109 @@
+<div class="container"><h4>CheckOut</h4></div>
+<hr>
+<div class="container">
+  <div class="table-hover">
+      <table class="table table-hover">
+          <thead>
+              <tr>
+                  <th>Image</th>
+                  <th>Product</th>                  
+                  <th>Description</th>
+                  <th>Category</th>
+                  <th>Company</th>
+                  <th>Price</th>
+                  
+              </tr>
+          </thead>
+
+          <tbody>
+              <tr *ngFor="let p of cartItems">
+                  <td><img [src]="'assets/Images/'+p.productId+'/'+p.imgUrl" width=50 height=50></td>
+                  <td>{{p.productName}}</td>           
+                 
+                  
+                  <td>{{p.shortDescription}}</td>
+                  <td>{{p.categoryName}}</td>
+                  <td>{{p.companyName}}</td>
+                  <td>Rs. {{p.price}} /-</td>
+                  
+              </tr>
+          </tbody>
+
+
+</table>
+
+</div>
+
+</div>
+
+<div class="container">
+    <h2>Transaction Page</h2>
+    <form class="form-horizontal"  (ngSubmit)="onSubmit()" #userForm="ngForm">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="bankname">Bank Name:</label>
+            <div class="col-sm-10">
+              <input type="text" [(ngModel)]="transactionDetailsRequest.bankName" class="form-control" id="bankname" 
+              placeholder="Enter Bank Name" name="bankname" required #name="ngModel">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="cardnumber">Card Number:</label>
+            <div class="col-sm-10">
+              <input type="number" [(ngModel)]="transactionDetailsRequest.cardNumber" class="form-control" id="cardnumber" 
+              placeholder="Enter Card Number" name="cardnumber" required #name="ngModel" maxlength=16>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="dateoftrans">Date Of Transaction</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="dateoftrans" [value]="currentDate"
+              placeholder="Select date of transaction" name="dateoftrans" disabled maxlength=16>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="modeoftransaction">Mode Of Transaction:</label>
+            <div class="col-sm-10">
+                
+                    
+                    <select class="form-control" id="modeOfTransaction" [(ngModel)]="transactionDetailsRequest.modeOfTransaction" class="form-control" 
+                    placeholder="Select date of transaction" name="modeOfTransaction" required #name="ngModel">
+                      <option value=1>Credit Card</option>
+                      <option value=2>Debit Card</option>
+                      <option value=3>Net Banking</option>
+                      
+                    </select>
+                  
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="nameoncard">Name on Card:</label>
+            <div class="col-sm-10">
+              <input type="text" [(ngModel)]="transactionDetailsRequest.nameOnCard" class="form-control" id="nameoncard" 
+              placeholder="Enter Name on card" name="nameoncard" required #name="ngModel">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="transactionamount">Transaction Amount:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="transactionamount" [value]="transactionAmount"
+              placeholder="Enter Transaction Amount" name="transactionamount" required disabled>
+            </div>
+          </div>
+
+
+        
+          <div class="form-group">        
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-primary">Submit</button>&nbsp;&nbsp;&nbsp;
+              <button type="reset" class="btn btn-primary">Reset</button>
+            </div>
+          </div>
+        </form>
+    </div>
+<router-outlet></router-outlet>
+

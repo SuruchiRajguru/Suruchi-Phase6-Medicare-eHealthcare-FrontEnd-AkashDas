@@ -1,0 +1,45 @@
+
+<div class="container">
+    <div class="container">
+        <div class="col-sm-11"></div>
+        <div class="col-sm-1"><a routerLink="/adminportal/products-add"><button type="button" class="btn btn-info">Add</button></a></div>
+        
+    </div>
+<div class="container">
+    <div class="table-hover">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Company</th>
+                    
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let p of products">
+                    <td><img [src]="'assets/Images/'+p.productId+'/'+p.imgUrl" width=50 height=50></td>
+                    <td>{{p.productName}}</td>
+                    
+                   
+                    
+                    <td>{{p.shortDescription}}</td>
+                    <td>{{p.category.categoryName}}</td>
+                    <td>{{p.company.companyName}}</td>
+                    <td><button type="button" (click)="onAddQuantity(p.productId)" class="btn btn-info">Add Quantity</button></td>
+                </tr>
+            </tbody>
+
+
+</table>
+
+</div>
+</div>
+</div>
+
+
+

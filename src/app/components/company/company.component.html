@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="container">
+        <div class="col-sm-11"></div>
+        <div class="col-sm-1"><a routerLink="/adminportal/company-add"><button type="button" class="btn btn-info">Add</button></a></div>
+        
+    </div>
+    
+    <div class="container">
+        <div class="table-hover">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                       
+                        <th>CompanyId</th>
+                        <th>CompanyName</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let c of companies">
+                       
+                        <td>{{c.companyId}}</td>
+                        <td>{{c.companyName}}</td>
+                    </tr>
+                </tbody>
+            </table>
+    
+    
+        </div>
+    </div>
+</div>
+

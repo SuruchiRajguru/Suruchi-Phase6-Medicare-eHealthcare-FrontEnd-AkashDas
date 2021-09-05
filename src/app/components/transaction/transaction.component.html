@@ -1,0 +1,36 @@
+<p>transaction works!</p>
+
+<div class="container">
+    <div class="table-hover">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                   <th>Transaction Id</th>
+                    <th>Bank Name</th>
+                    <th>Card Number</th>
+                    <th>Date Of Transaction</th>
+                    <th>Mode Of Transaction</th>
+                    <th>Name on Card </th>
+                    <th>Transaction Amount</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let t of transaction">
+                   
+                    <td>{{t.transactionId}}</td>
+                    <td>{{t.bankName}}</td>
+                    <td>{{t.cardNumber}}</td>
+                    <td>{{t.dateOfTrans}}</td>
+                    <td>{{t.modeOfTransaction}}</td>
+                    <td>{{t.nameOnCard}}</td>
+                    <td>{{t.transactionAmount}}</td>
+                    
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

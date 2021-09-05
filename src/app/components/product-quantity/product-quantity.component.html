@@ -1,0 +1,39 @@
+
+<div class="container">
+    <div class="table-hover">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Available</th>                    
+                    <th>Price</th>
+                    <th>Date</th>
+                    <th>Company</th>
+                    <th>Category</th>
+                    
+                    
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let pq of productQuantities">
+                    <td><img [src]="'assets/Images/'+pq.product.productId+'/'+pq.product.imgUrl" width=40 height=40></td>
+                    <td>{{pq.product.productName}}</td>
+                    <td>{{pq.quantity}}</td>
+                    <td>{{pq.availableQuantity}}</td>                    
+                    <td>{{pq.price}}</td>
+                    <td>{{pq.entryDate}}</td>
+                    <td>{{pq.product.company.companyName}}</td>
+                    <td>{{pq.product.category.categoryName}}</td>                    
+                </tr>
+            </tbody>
+
+
+</table>
+
+</div>
+</div>
+
+<router-outlet></router-outlet>

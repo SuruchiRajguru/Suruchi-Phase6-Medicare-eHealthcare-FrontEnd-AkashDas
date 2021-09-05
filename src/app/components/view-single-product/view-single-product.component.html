@@ -1,0 +1,25 @@
+<br/>
+<div class="container">    
+    <h2>{{productDetailResponse.productName}}</h2>
+    <hr>
+    <div class="col-sm-6">
+        <img [src]="'assets/Images/'+productDetailResponse.productId+'/'+productDetailResponse.imgUrl" class="img-responsive" width="1000" height="1000" alt="Image">
+    </div>
+    <div class="col-sm-6">
+      <div class="panel panel-success">
+        <div class="panel-heading">{{productDetailResponse.productName}}</div>
+        <div class="panel-body">
+          <ul>
+            <li>Category : {{productDetailResponse.categoryName}}</li>
+            <li>Company : {{productDetailResponse.companyName}}</li>
+            <li>Description : {{productDetailResponse.shortDescription}}</li>
+            <li>Details : {{productDetailResponse.longDescription}}</li>
+            <li>Available : {{productDetailResponse.availabeQuantity}}</li>
+            <li>Price : {{productDetailResponse.price}} /-</li>
+          </ul>
+        </div>
+        <div class="panel-footer">&nbsp;&nbsp;&nbsp;&nbsp;
+           <button type="button" class="btn btn-success" (click)="onAddToCart(productDetailResponse.quantityId)">Add to Cart</button></div>
+      </div>
+    </div>
+  </div>
